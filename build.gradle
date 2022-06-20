@@ -49,11 +49,21 @@ subprojects  {
     }
 
     dependencies {
-        implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+        if(!project.name.contains("module-common")) {
+            implementation project(':module-common')
+        }
+
+        implementation ('org.springframework.boot:spring-boot-starter')
+//        implementation ("org.springframework.boot:spring-boot-starter:${springBootVersion}")
         implementation 'org.springframework.boot:spring-boot-starter-web'
+        implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+
         compileOnly 'org.projectlombok:lombok'
+
         developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
         annotationProcessor 'org.projectlombok:lombok'
+
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
     }
 
