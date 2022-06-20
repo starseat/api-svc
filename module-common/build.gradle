@@ -1,0 +1,13 @@
+//plugins {
+//    id 'java'
+//}
+
+version '0.0.1'
+
+
+dependencies {
+}
+
+// 공통 라이브러리화를 위해서 아래처럼 설정
+bootJar { enabled = false }
+jar { enabled = true }
